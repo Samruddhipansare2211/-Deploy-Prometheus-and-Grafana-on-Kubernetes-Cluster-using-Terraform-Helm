@@ -1,4 +1,3 @@
-````md
 # 🚀 Deploy Prometheus and Grafana on Kubernetes using Terraform & Helm
 
 ---
@@ -21,19 +20,20 @@ The monitoring stack includes:
 - 🏗 Terraform for infrastructure automation
 - ⚙️ Helm for Kubernetes package management
 
-The project automates the deployment process for scalable and reusable cloud-native monitoring infrastructure.
+The project automates deployment and management of monitoring infrastructure using modern DevOps practices.
 
 ---
 
 # 🎯 Objective
 
-The main objective of this project is to automate deployment of Prometheus and Grafana on Kubernetes using Terraform and Helm for:
+The objective of this project is to automate deployment of Prometheus and Grafana on Kubernetes using Terraform and Helm for:
 
 - Infrastructure automation
-- Monitoring setup
-- Real-time visualization
+- Real-time monitoring
+- Visualization dashboards
 - Reusable infrastructure
-- Simplified DevOps operations
+- Cloud-native deployment
+- DevOps monitoring workflow
 
 ---
 
@@ -47,7 +47,7 @@ The main objective of this project is to automate deployment of Prometheus and G
 | Helm | Kubernetes package manager |
 | Prometheus | Monitoring tool |
 | Grafana | Visualization dashboard |
-| kubectl | Kubernetes command line |
+| kubectl | Kubernetes CLI |
 | Docker Desktop | Container runtime |
 | VS Code | Development environment |
 
@@ -118,7 +118,13 @@ Terraform Configuration
             ↓
 Terraform Initialization
             ↓
-Helm Charts Installation
+Terraform Validation
+            ↓
+Terraform Plan
+            ↓
+Terraform Apply
+            ↓
+Helm Charts Deployment
             ↓
 Kubernetes Namespace Creation
             ↓
@@ -162,7 +168,7 @@ minikube start
 
 ---
 
-# Verify Cluster
+# Verify Kubernetes Cluster
 
 ```bash
 kubectl get nodes
@@ -178,25 +184,8 @@ Ready
 
 # 📸 Minikube Cluster Running
 
-![Minikube](screenshots/minikube-start.png)
-
----
-
-# 📊 Kubernetes Monitoring Architecture
-
 ```text
-                    Kubernetes Cluster
-                              |
-      ------------------------------------------------
-      |                                              |
-      v                                              v
-
-+--------------------+                 +--------------------+
-|     Prometheus     |                 |      Grafana       |
-|--------------------|                 |--------------------|
-| Metrics Collection |                 | Dashboard UI       |
-| Monitoring         |                 | Visualization      |
-+--------------------+                 +--------------------+
+screenshots/minikube-start.png
 ```
 
 ---
@@ -219,7 +208,9 @@ Terraform downloads:
 
 # 📸 Terraform Initialization
 
-![Terraform Init](screenshots/terraform-init.png)
+```text
+screenshots/terraform-init.png
+```
 
 ---
 
@@ -255,6 +246,14 @@ This shows:
 
 ---
 
+# 📸 Terraform Plan
+
+```text
+screenshots/terraform-plan.png
+```
+
+---
+
 # 🚀 STEP 5 — Deploy Infrastructure
 
 Deploy Prometheus and Grafana.
@@ -280,7 +279,27 @@ Terraform automatically:
 
 # 📸 Terraform Apply Output
 
-![Terraform Apply](screenshots/terraform-apply.png)
+```text
+screenshots/terraform-apply.png
+```
+
+---
+
+# 🔄 Deployment Workflow Diagram
+
+```text
+Terraform Apply
+        ↓
+Helm Release
+        ↓
+Kubernetes Namespace
+        ↓
+Pods Created
+        ↓
+Services Exposed
+        ↓
+Monitoring Stack Running
+```
 
 ---
 
@@ -321,35 +340,48 @@ helm list -n monitoring
 
 # 📸 Running Pods
 
-![Pods](screenshots/pods.png)
+```text
+screenshots/pods.png
+```
+
+---
+
+# 📸 Running Services
+
+```text
+screenshots/services.png
+```
 
 ---
 
 # 📸 Helm Releases
 
-![Helm List](screenshots/helm-list.png)
-
----
-
-# 🔄 Deployment Workflow Diagram
-
 ```text
-Terraform Apply
-        ↓
-Helm Release
-        ↓
-Kubernetes Namespace
-        ↓
-Pods Created
-        ↓
-Services Exposed
-        ↓
-Monitoring Stack Running
+screenshots/helm-list.png
 ```
 
 ---
 
-# 🚀 STEP 7 — Access Prometheus
+# ☸️ Kubernetes Monitoring Architecture
+
+```text
+                    Kubernetes Cluster
+                              |
+      ------------------------------------------------
+      |                                              |
+      v                                              v
+
++--------------------+                 +--------------------+
+|     Prometheus     |                 |      Grafana       |
+|--------------------|                 |--------------------|
+| Metrics Collection |                 | Dashboard UI       |
+| Monitoring         |                 | Visualization      |
++--------------------+                 +--------------------+
+```
+
+---
+
+# 🚀 STEP 7 — Access Prometheus Dashboard
 
 Run port forwarding:
 
@@ -369,11 +401,13 @@ Prometheus dashboard opens successfully.
 
 # 📸 Prometheus Dashboard
 
-![Prometheus UI](screenshots/prometheus-ui.png)
+```text
+screenshots/prometheus-ui.png
+```
 
 ---
 
-# 🚀 STEP 8 — Access Grafana
+# 🚀 STEP 8 — Access Grafana Dashboard
 
 Run port forwarding:
 
@@ -399,7 +433,9 @@ http://localhost:3000
 
 # 📸 Grafana Dashboard
 
-![Grafana Dashboard](screenshots/grafana-dashboard.png)
+```text
+screenshots/grafana-dashboard.png
+```
 
 ---
 
@@ -429,20 +465,37 @@ Save & Test
 
 ---
 
+# 📸 Grafana Data Source Configuration
+
+```text
+screenshots/grafana-datasource.png
+```
+
+---
+
 # 🚀 STEP 10 — Import Kubernetes Dashboard
 
-Import dashboard using ID:
+Import Dashboard ID:
 
 ```text
 1860
 ```
 
-This imports Kubernetes monitoring dashboard with:
+This imports Kubernetes monitoring dashboard containing:
 
 - CPU Usage
 - Memory Usage
 - Pod Monitoring
 - Cluster Metrics
+- Node Performance
+
+---
+
+# 📸 Kubernetes Dashboard Imported
+
+```text
+screenshots/kubernetes-dashboard.png
+```
 
 ---
 
@@ -462,7 +515,7 @@ Real-Time Monitoring
 
 ---
 
-# 📄 Terraform Files
+# 📄 Terraform Files Description
 
 | File | Purpose |
 |---|---|
@@ -495,11 +548,12 @@ Real-Time Monitoring
 
 # ✅ Advantages of the Project
 
-- Automated monitoring setup
-- Real-time infrastructure monitoring
-- Cloud-native deployment
-- Scalable monitoring architecture
+- Automated monitoring deployment
+- Real-time monitoring system
+- Cloud-native infrastructure
 - Infrastructure as Code implementation
+- Scalable monitoring architecture
+- Faster DevOps setup
 - Easy Kubernetes management
 
 ---
@@ -512,7 +566,7 @@ Real-Time Monitoring
 - Add Node Exporter
 - Implement CI/CD Pipeline
 - Add Loki for log monitoring
-- Integrate Prometheus Alert Rules
+- Integrate Prometheus alert rules
 
 ---
 
@@ -533,17 +587,18 @@ After completing this project, you will understand:
 
 # 🏁 Conclusion
 
-This project demonstrates complete deployment of a cloud-native monitoring stack using Terraform, Helm, Prometheus, and Grafana on Kubernetes.
+This project demonstrates deployment of a complete cloud-native monitoring stack using Terraform, Helm, Prometheus, and Grafana on Kubernetes.
 
 The implementation provides practical understanding of:
 
 - Infrastructure automation
-- Kubernetes monitoring
+- Monitoring deployment
+- Kubernetes resource management
 - Helm package deployment
 - Real-time visualization
 - Scalable DevOps practices
 
-This project reflects real-world DevOps and SRE monitoring workflows used in modern cloud environments.
+This project reflects real-world DevOps and Site Reliability Engineering (SRE) monitoring workflows widely used in modern cloud environments.
 
 ---
 
@@ -552,4 +607,3 @@ This project reflects real-world DevOps and SRE monitoring workflows used in mod
 ## Samruddhi Pansare
 
 ---
-````
