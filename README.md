@@ -182,13 +182,7 @@ Ready
 
 ---
 
-# 📸 Minikube Cluster Running
 
-```text
-screenshots/minikube-start.png
-```
-
----
 
 # 🚀 STEP 2 — Initialize Terraform
 
@@ -206,13 +200,6 @@ Terraform downloads:
 
 ---
 
-# 📸 Terraform Initialization
-
-```text
-screenshots/terraform-init.png
-```
-
----
 
 # 🚀 STEP 3 — Validate Terraform Configuration
 
@@ -246,13 +233,6 @@ This shows:
 
 ---
 
-# 📸 Terraform Plan
-
-```text
-screenshots/terraform-plan.png
-```
-
----
 
 # 🚀 STEP 5 — Deploy Infrastructure
 
@@ -277,13 +257,7 @@ Terraform automatically:
 
 ---
 
-# 📸 Terraform Apply Output
 
-```text
-screenshots/terraform-apply.png
-```
-
----
 
 # 🔄 Deployment Workflow Diagram
 
@@ -338,29 +312,6 @@ helm list -n monitoring
 
 ---
 
-# 📸 Running Pods
-
-```text
-screenshots/pods.png
-```
-
----
-
-# 📸 Running Services
-
-```text
-screenshots/services.png
-```
-
----
-
-# 📸 Helm Releases
-
-```text
-screenshots/helm-list.png
-```
-
----
 
 # ☸️ Kubernetes Monitoring Architecture
 
@@ -399,13 +350,6 @@ Prometheus dashboard opens successfully.
 
 ---
 
-# 📸 Prometheus Dashboard
-
-```text
-screenshots/prometheus-ui.png
-```
-
----
 
 # 🚀 STEP 8 — Access Grafana Dashboard
 
@@ -431,13 +375,6 @@ http://localhost:3000
 
 ---
 
-# 📸 Grafana Dashboard
-
-```text
-screenshots/grafana-dashboard.png
-```
-
----
 
 # 🚀 STEP 9 — Configure Grafana Data Source
 
@@ -465,13 +402,6 @@ Save & Test
 
 ---
 
-# 📸 Grafana Data Source Configuration
-
-```text
-screenshots/grafana-datasource.png
-```
-
----
 
 # 🚀 STEP 10 — Import Kubernetes Dashboard
 
@@ -491,13 +421,6 @@ This imports Kubernetes monitoring dashboard containing:
 
 ---
 
-# 📸 Kubernetes Dashboard Imported
-
-```text
-screenshots/kubernetes-dashboard.png
-```
-
----
 
 # 📈 Monitoring Workflow
 
